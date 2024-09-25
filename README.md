@@ -1,6 +1,7 @@
 # konstruct
-Learning Tailwind.css
+Simple landing page site.
 
 
-# To-do List
+## To-do List
 - [ ] Add animation
+- [ ] Add backend
