@@ -1,245 +1,530 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            fontFamily: {
-              BebasNeueBold: ['BebasNeueBold'] // Добавляет новый класс `font-family`
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <script src="https://cdn.tailwindcss.com"></script>
+        <script>
+            tailwind.config = {
+                theme: {
+                    extend: {
+                        fontFamily: {
+                            BebasNeueBold: ["BebasNeueBold"], // Добавляет новый класс `font-family`
+                        },
+                        animation: {
+                            'slide-top': 'slide-top 750ms ease-out',
+                            appearance: 'appearance 750ms ease-in'
+                        },
+                        keyframes: {
+                            'slide-top': {
+                                'from': {
+                                    opacity: '0',
+                                    transform: 'translateY(-150px)'
+                                },
+                                'to': {
+                                    opacity: '1',
+                                    transform: 'translateY(0px)'
+                                }
+                            },
+                            appearance: {
+                                'from': {
+                                    opacity: '0',
+                                },
+                                'to': {
+                                    opacity: '1',
+                                }
+                            }
+                        }
+                    },
+                },
+            };
+        </script>
+        <style type="text/tailwindcss">
+            @font-face {
+                /* Добавляет новый шрифт tailwind.css*/
+                font-family: BebasNeueBold;
+                src: url("./assets/fonts/bebas_neue_bold.woff"),
+                    url("./assets/fonts/bebas_neue_bold.woff2");
             }
-          }
-        }
-      }
-    </script>
-    <style type="text/tailwindcss">
-      @font-face {  /* Добавляет новый шрифт tailwind.css*/
-        font-family: BebasNeueBold;
-        src: url("./fonts/bebas_neue_bold.woff"), url("./fonts/bebas_neue_bold.woff2");
-      }
-    </style>
-    <link rel="shortcut icon" href="./img/favicon.svg" type="image/x-icon" />
-    <title>KONSTRUKT</title>
-  </head>
-  <body>
-    <header
-      class="w-full h-full box-border"
-    >
-        <div class="bg-[url('./img/bg_header.png')] bg-no-repeat bg-cover bg-center box-border flex flex-col items-center justify-between px-3.5 pt-10 pb-[70px] h-screen" id="main">
-            <img src="./img/company-logo-white.svg" alt="company-logo-white" class="w-[102px] h-[23px]"/>
-            <div class="text-center box-border">
-                <h1 class="font-normal text-2xl md:text-6xl text-white font-BebasNeueBold tracking-[5.71px]">PARTNER WITH KONSTUCT</h1>
-                <h3 class="font-semibold text-xs md:text-base text-white">An award-winning construction management firm</h3>
-            </div>
-            <a href="#nav" class="font-semibold text-[11px] text-white font-sans tracking-[3.7px] font-['Open_Sans']">SCROLL DOWN</a>
-        </div>
-        <div>
-            <nav class="bg-white px-2.5 sm:px-4 py-2.5 outline outline-[#E6E6E6] outline-1 box-border" id="nav">
-                <div class="container flex flex-wrap justify-between items-center mx-auto lg:max-w-[950px]">
-                  <a href="/" class="flex items-center">
-                    <img src="./img/company-logo-black.svg" alt="company-logo-black" class="w-[80px] h-[19px]"/>
-                  </a>
-                  <div class="flex items-center">
-                    <button
-                      id="menu-toggle"
-                      type="button"
-                      class="inline-flex items-center p-2 ml-3 text-sm text-gray-500 rounded-lg hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 md:hidden"
+        </style>
+        <link
+            rel="shortcut icon"
+            href="./assets/img/favicon.svg"
+            type="image/x-icon"
+        />
+        <title>KONSTRUKT</title>
+    </head>
+    <body>
+        <header class="w-full h-full box-border">
+            <div
+                class="bg-[url('./assets/img/bg_header.png')] bg-no-repeat bg-cover bg-center box-border flex flex-col items-center justify-between px-3.5 pt-10 pb-[70px] h-screen"
+                id="main"
+            >
+                <img
+                    src="./assets/img/company-logo-white.svg"
+                    alt="company-logo-white"
+                    class="w-[102px] h-[23px]"
+                />
+                <div class="text-center box-border">
+                    <h1
+                        class="font-normal text-2xl md:text-6xl text-white font-BebasNeueBold tracking-[5.71px] animate-slide-top"
                     >
-                      <span class="sr-only">Open main menu</span>
-                      <!-- Hamburger icon -->
-                      <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                          stroke-width="2"
-                          d="M4 6h16M4 12h16m-7 6h7"
-                        />
-                      </svg>
+                        PARTNER WITH KONSTRUCT
+                    </h1>
+                    <h3 class="font-semibold text-xs md:text-base text-white animate-appearance">
+                        An award-winning construction management firm
+                    </h3>
+                </div>
+                <a
+                    href="#nav"
+                    class="font-semibold text-[11px] text-white font-sans tracking-[3.7px] font-['Open_Sans']"
+                    >SCROLL DOWN</a
+                >
+            </div>
+            <div>
+                <nav
+                    class="bg-white px-2.5 sm:px-4 py-2.5 outline outline-[#E6E6E6] outline-1 box-border"
+                    id="nav"
+                >
+                    <div
+                        class="container flex flex-wrap justify-between items-center mx-auto lg:max-w-[950px]"
+                    >
+                        <a href="/" class="flex items-center">
+                            <img
+                                src="./assets/img/company-logo-black.svg"
+                                alt="company-logo-black"
+                                class="w-[80px] h-[19px]"
+                            />
+                        </a>
+                        <div class="flex items-center">
+                            <button
+                                id="menu-toggle"
+                                type="button"
+                                class="inline-flex items-center p-2 ml-3 text-sm text-gray-500 rounded-lg hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 md:hidden"
+                            >
+                                <span class="sr-only">Open main menu</span>
+                                <!-- Hamburger icon -->
+                                <svg
+                                    class="h-6 w-6"
+                                    fill="none"
+                                    viewBox="0 0 24 24"
+                                    stroke="currentColor"
+                                >
+                                    <path
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        stroke-width="2"
+                                        d="M4 6h16M4 12h16m-7 6h7"
+                                    />
+                                </svg>
+                            </button>
+                        </div>
+
+                        <div
+                            class="w-full md:block md:w-auto hidden"
+                            id="mobile-menu"
+                        >
+                            <ul
+                                class="flex flex-col mt-4 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium"
+                            >
+                                <li>
+                                    <a
+                                        href="#main"
+                                        class="block py-2 pr-4 pl-3 text-white bg-[#00A4E5] rounded md:bg-transparent md:text-[#00A4E5] md:te md:p-0"
+                                        aria-current="page"
+                                    >
+                                        Home
+                                    </a>
+                                </li>
+                                <li>
+                                    <a
+                                        href="#about"
+                                        class="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-[#00A4E5] md:p-0"
+                                    >
+                                        About
+                                    </a>
+                                </li>
+                                <li>
+                                    <a
+                                        href="#services"
+                                        class="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-[#00A4E5] md:p-0"
+                                    >
+                                        Services
+                                    </a>
+                                </li>
+                                <li>
+                                    <a
+                                        href="#work"
+                                        class="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-[#00A4E5] md:p-0"
+                                    >
+                                        Work
+                                    </a>
+                                </li>
+                                <li>
+                                    <a
+                                        href="#contact"
+                                        class="block py-2 pr-4 pl-3 text-gray-700 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-[#00A4E5] md:p-0"
+                                    >
+                                        Contact
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </header>
+        <main>
+            <div
+                class="px-2.5 lg:px-0 lg:max-w-[950px] lg:mx-auto box-border mt-14 mb-32 flex flex-col items-center"
+                id="about"
+            >
+                <div class="mb-16">
+                    <h1
+                        class="font-sans font-bold text-lg tracking-[2.31px] text-[#48555B]"
+                    >
+                        OUR STORY
+                    </h1>
+                    <div class="size-0.5 w-[50px] bg-[#00A4E5] m-auto"></div>
+                </div>
+                <div class="lg:flex lg:w-full lg:justify-between">
+                    <div>
+                        <h2
+                            class="font-bold text-[#48555B] text-xl mb-[30px] lg:w-[405px]"
+                        >
+                            Founded in 2011 by John Mathew Smith,
+                            <span class="text-[#00A4E5]">Konstruct</span> has
+                            become the number one construction management firm
+                        </h2>
+                        <h3
+                            class="font-normal font-['Open_Sans'] font-sans text-sm text-[#48555B] tracking-[0.19px] mb-5 lg:w-[405px]"
+                        >
+                            Lorem ipsum dolor sit amet, consectetuer adipiscing
+                            elit, sed diam nonummy nibh euismod tincidunt ut
+                            laoreet dolore magna aliquam erat. Lorem ipsum dolor
+                            sit amet, consectetuer adipiscing elit, sed diam
+                            nonummy nibh euismod tincidunt ut laoreet dolore
+                            magna aliquam erat.
+                        </h3>
+                    </div>
+                    <div class="md:flex md:justify-between lg:gap-[20px]">
+                        <div
+                            class="bg-[url('./assets/img/Bitmap.png')] bg-no-repeat bg-cover bg-center box-border h-40 p-4 md:w-56 md:h-[224px] lg:w-[140px]"
+                        >
+                            <h1
+                                class="font-extrabold text-white text-2xl tracking-wider max-w-16"
+                            >
+                                WE PLAN
+                            </h1>
+                        </div>
+                        <div
+                            class="bg-[url('./assets/img/Manage.png')] bg-no-repeat bg-cover bg-center box-border h-40 p-4 md:my-0 my-5 md:w-56 md:h-[224px] lg:w-[140px]"
+                        >
+                            <h1
+                                class="font-extrabold text-white text-2xl tracking-wider max-w-16"
+                            >
+                                WE MANAGE
+                            </h1>
+                        </div>
+                        <div
+                            class="bg-[url('./assets/img/Build.png')] bg-no-repeat bg-cover bg-center box-border h-40 p-4 md:w-56 md:h-[224px] lg:w-[140px]"
+                        >
+                            <h1
+                                class="font-extrabold text-white text-2xl tracking-wider max-w-16"
+                            >
+                                WE BUILD
+                            </h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div
+                class="px-2.5 lg:px-0 lg:max-w-[950px] lg:mx-auto box-border flex flex-col lg:flex-row lg:justify-between items-center mb-[76px]"
+                id="services"
+            >
+                <div class="mb-10 lg:mb-0 lg:w-[199px] lg:mr-[154px]">
+                    <h1
+                        class="font-sans font-bold text-lg tracking-[2.31px] text-[#48555B]"
+                    >
+                        OUR CAPABILITIES
+                    </h1>
+                    <div
+                        class="size-0.5 w-[50px] bg-[#00A4E5] m-auto lg:m-0"
+                    ></div>
+                </div>
+                <h3
+                    class="font-normal font-['Open_Sans'] font-sans text-sm text-[#48555B] tracking-[0.2px] mb-5 lg:mb-0 lg:w-[405px]"
+                >
+                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
+                    sed diam nonummy nibh euismod tincidunt ut laoreet dolore
+                    magna aliquam erat.
+                </h3>
+                <button
+                    class="font-['Open_Sans'] font-sans font-bold text-white bg-[#00A4E5] py-3 px-7 active:bg-[#038CC2] active:text-[#DDDDDD]"
+                >
+                    ALL SERVICES
+                </button>
+            </div>
+            <div
+                class="px-2.5 lg:px-0 lg:max-w-[950px] lg:mx-auto box-border flex md:flex-row flex-col items-center md:items-stretch gap-7 mb-[115px]"
+            >
+                <div
+                    class="border-solid border border-[#E6E6E6] px-6 py-9 flex flex-col flex-wrap items-start"
+                >
+                    <img
+                        src="./assets/img/management.svg"
+                        alt="management_img"
+                    />
+                    <h1
+                        class="font-sans font-bold font-['Open_Sans'] text-base text-[#48555B] tracking-[0.43px] mt-6 mb-3.5"
+                    >
+                        PROJECT AND CONSTRUCTION MANAGEMENT
+                    </h1>
+                    <h3
+                        class="font-normal font-['Open_Sans'] font-sans text-[#48555B] text-xs"
+                    >
+                        Lorem ipsum dolor sit amet, consectetuer adipiscing
+                        elit, sed diam nonummy nibh euismod tincidunt ut laoreet
+                        dolore magna aliquam erat.
+                    </h3>
+                </div>
+                <div
+                    class="border-solid border border-[#E6E6E6] px-6 py-9 flex flex-col flex-wrap items-start md:justify-between"
+                >
+                    <img src="./assets/img/structure.svg" alt="structure_img" />
+                    <h1
+                        class="font-sans font-bold font-['Open_Sans'] text-base text-[#48555B] tracking-[0.43px] mt-6 mb-3.5"
+                    >
+                        STRUCTURE AUDIT AND MAINTENANCE
+                    </h1>
+                    <h3
+                        class="font-normal font-['Open_Sans'] font-sans text-[#48555B] text-xs"
+                    >
+                        Lorem ipsum dolor sit amet, consectetuer adipiscing
+                        elit, sed diam nonummy nibh euismod tincidunt ut laoreet
+                        dolore magna aliquam erat.
+                    </h3>
+                </div>
+                <div
+                    class="border-solid border border-[#E6E6E6] px-6 py-9 flex flex-col flex-wrap items-start"
+                >
+                    <img src="./assets/img/modeling.svg" alt="modeling_img" />
+                    <h1
+                        class="font-sans font-bold font-['Open_Sans'] text-base text-[#48555B] tracking-[0.43px] mt-6 mb-3.5"
+                    >
+                        FACTORY CONSTRUCTION AND MODELING
+                    </h1>
+                    <h3
+                        class="font-normal font-['Open_Sans'] font-sans text-[#48555B] text-xs"
+                    >
+                        Lorem ipsum dolor sit amet, consectetuer adipiscing
+                        elit, sed diam nonummy nibh euismod tincidunt ut laoreet
+                        dolore magna aliquam erat.
+                    </h3>
+                </div>
+            </div>
+            <div class="w-full h-full box-border" id="work">
+                <div
+                    class="bg-[url('./assets/img/bg.png')] bg-no-repeat bg-cover bg-center box-border flex flex-col items-center justify-center px-2.5 h-[499px]"
+                >
+                    <h1
+                        class="font-['Open_Sans'] font-sans font-bold text-3xl text-center text-[#48555B] tracking-[0.15px] mb-9 w-[350px]"
+                    >
+                        Want to build something amazing?
+                    </h1>
+                    <button
+                        class="font-['Open_Sans'] font-sans font-bold text-white bg-[#00A4E5] py-3 px-7 active:bg-[#038CC2] active:text-[#DDDDDD]"
+                    >
+                        GET IN TOUCH
                     </button>
-                  </div>
-              
-                  <div
-                    class="w-full md:block md:w-auto hidden"
-                    id="mobile-menu"
-                  >
-                    <ul class="flex flex-col mt-4 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium">
-                      <li>
-                        <a
-                          href="#main"
-                          class="block py-2 pr-4 pl-3 text-white bg-[#00A4E5] rounded md:bg-transparent md:text-[#00A4E5] md:te md:p-0"
-                          aria-current="page"
-                        >
-                          Home
-                        </a>
-                      </li>
-                      <li>
-                        <a
-                          href="#about"
-                          class="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-[#00A4E5] md:p-0"
-                        >
-                          About
-                        </a>
-                      </li>
-                      <li>
-                        <a
-                          href="#services"
-                          class="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-[#00A4E5] md:p-0"
-                        >
-                          Services
-                        </a>
-                      </li>
-                      <li>
-                        <a
-                          href="#work"
-                          class="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-[#00A4E5] md:p-0"
-                        >
-                          Work
-                        </a>
-                      </li>
-                      <li>
-                        <a
-                          href="#contact"
-                          class="block py-2 pr-4 pl-3 text-gray-700 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-[#00A4E5] md:p-0"
-                        >
-                          Contact
-                        </a>
-                      </li>
-                    </ul>
-                  </div>
-              
-                </div>
-              </nav>
-        </div>
-    </header>
-    <main>
-        <div class="px-2.5 lg:px-0 lg:max-w-[950px] lg:mx-auto box-border mt-14 mb-32 flex flex-col items-center" id="about">
-            <div class="mb-16">
-                <h1 class="font-sans font-bold text-lg tracking-[2.31px] text-[#48555B]">OUR STORY</h1>
-                <div class="size-0.5 w-[50px] bg-[#00A4E5] m-auto"></div>
-            </div>
-            <div class="lg:flex lg:w-full lg:justify-between">
-                <div>
-                    <h2 class="font-bold text-[#48555B] text-xl mb-[30px] lg:w-[405px]">Founded in 2011 by John Mathew Smith, <span class="text-[#00A4E5]">Konstruct</span> has become the number one construction management firm</h2>
-                    <h3 class="font-normal font-['Open_Sans'] font-sans text-sm text-[#48555B] tracking-[0.19px] mb-5 lg:w-[405px]">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat.</h3>
-                </div>
-                <div class="md:flex md:justify-between lg:gap-[20px]">
-                    <div class="bg-[url('./img/Bitmap.png')] bg-no-repeat bg-cover bg-center box-border h-40 p-4 md:w-56 md:h-[224px] lg:w-[140px]">
-                        <h1 class="font-extrabold text-white text-2xl tracking-wider max-w-16">WE PLAN</h1>
-                    </div>
-                    <div class="bg-[url('./img/Manage.png')] bg-no-repeat bg-cover bg-center box-border h-40 p-4 md:my-0 my-5 md:w-56 md:h-[224px] lg:w-[140px]">
-                        <h1 class="font-extrabold text-white text-2xl tracking-wider max-w-16">WE MANAGE</h1>
-                    </div>
-                    <div class="bg-[url('./img/Build.png')] bg-no-repeat bg-cover bg-center box-border h-40 p-4 md:w-56 md:h-[224px] lg:w-[140px]">
-                        <h1 class="font-extrabold text-white text-2xl tracking-wider max-w-16">WE BUILD</h1>
-                    </div>
                 </div>
             </div>
-        </div>
-        <div class="px-2.5 lg:px-0 lg:max-w-[950px] lg:mx-auto box-border flex flex-col lg:flex-row lg:justify-between items-center mb-[76px]" id="services">
-          <div class="mb-10 lg:mb-0 lg:w-[199px] lg:mr-[154px]">
-              <h1 class="font-sans font-bold text-lg tracking-[2.31px] text-[#48555B]">OUR CAPABILITIES</h1>
-              <div class="size-0.5 w-[50px] bg-[#00A4E5] m-auto lg:m-0"></div>
-          </div>
-          <h3 class="font-normal font-['Open_Sans'] font-sans text-sm text-[#48555B] tracking-[0.2px] mb-5 lg:mb-0 lg:w-[405px]">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat.</h3>
-          <button class="font-['Open_Sans'] font-sans font-bold text-white bg-[#00A4E5] py-3 px-7 active:bg-[#038CC2] active:text-[#DDDDDD]">ALL SERVICES</button>
-        </div>
-        <div class="px-2.5 lg:px-0 lg:max-w-[950px] lg:mx-auto box-border flex md:flex-row flex-col items-center md:items-stretch gap-7 mb-[115px]">
-          <div class="border-solid border border-[#E6E6E6] px-6 py-9 flex flex-col flex-wrap items-start">
-            <img src="./img/management.svg" alt="management_img">
-            <h1 class="font-sans font-bold font-['Open_Sans'] text-base text-[#48555B] tracking-[0.43px] mt-6 mb-3.5">
-              PROJECT AND CONSTRUCTION MANAGEMENT
-            </h1>
-            <h3 class="font-normal font-['Open_Sans'] font-sans text-[#48555B] text-xs">
-              Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat.
-            </h3>
-          </div>
-          <div class="border-solid border border-[#E6E6E6] px-6 py-9 flex flex-col flex-wrap items-start md:justify-between">
-            <img src="./img/structure.svg" alt="structure_img">
-            <h1 class="font-sans font-bold font-['Open_Sans'] text-base text-[#48555B] tracking-[0.43px] mt-6 mb-3.5">
-              STRUCTURE AUDIT AND MAINTENANCE
-            </h1>
-            <h3 class="font-normal font-['Open_Sans'] font-sans text-[#48555B] text-xs">
-              Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat.
-            </h3>
-          </div>
-          <div class="border-solid border border-[#E6E6E6] px-6 py-9 flex flex-col flex-wrap items-start">
-            <img src="./img/modeling.svg" alt="modeling_img">
-            <h1 class="font-sans font-bold font-['Open_Sans'] text-base text-[#48555B] tracking-[0.43px] mt-6 mb-3.5">
-              FACTORY CONSTRUCTION AND MODELING
-            </h1>
-            <h3 class="font-normal font-['Open_Sans'] font-sans text-[#48555B] text-xs">
-              Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat.
-            </h3>
-          </div>
-        </div>
-        <div class="w-full h-full box-border" id="work">
-          <div class="bg-[url('./img/bg.png')] bg-no-repeat bg-cover bg-center box-border flex flex-col items-center justify-center px-2.5  h-[499px]">
-            <h1 class="font-['Open_Sans'] font-sans font-bold text-3xl text-center text-[#48555B] tracking-[0.15px] mb-9 w-[350px]">Want to build something amazing?</h1>
-            <button class="font-['Open_Sans'] font-sans font-bold text-white bg-[#00A4E5] py-3 px-7 active:bg-[#038CC2] active:text-[#DDDDDD]">GET IN TOUCH</button>
-          </div>
-        </div>
-        <div class="py-[30px] px-2.5 lg:px-0 box-border bg-[#171819]">
-          <div class="w-full flex flex-col items-center lg:flex-row lg:justify-center lg:max-w-[950px] lg:mx-auto">
-            <h1 class="lg:w-[216px] text-white font-sans text-[22px] tracking-[0.85px] font-bold font-['Open_Sans'] pb-5 lg:pb-0 lg:mr-[70px]">Newsletter Signup</h1>
-            <form method="get" class="flex justify-center w-full lg:w-auto lg:justify-start">
-              <input type="email" name="eMail" placeholder="test@youremail.com" required class="w-[250px] py-2 pl-4 font-sans font-['Open_Sans'] font-normal font-sm text-[#48555B]"/>
-              <button type="submit" class="bg-[#00A4E5] text-white font-sans text-3 tracking-[0.5px] font-bold font-['Open_Sans'] px-3 active:bg-[#038CC2] active:text-[#DDDDDD]">SIGNUP</button>
-            </form>
-          </div>
-        </div>
-    </main>
-    <footer>
-      <div class="px-2.5 lg:px-0 box-border bg-[#141A20] pt-[42px] pb-[50px]">
-        <div class="flex flex-col md:flex-row md:flex-wrap items-center lg:items-start md:justify-between lg:max-w-[950px] lg:mx-auto">
-          <div class="md:w-[250px]">
-            <div class="lg:max-w-[950px] lg:mx-auto">
-              <p class="font-sans font-normal font-['Open_Sans'] text-white text-[11px] tracking-[0.85px]">COMPANY</p>
-              <img src="./img/company-logo-white.svg" alt="" class="w-[101px] pt-[18px] pb-4">
-              <p class="font-sans font-normal font-['Open_Sans'] text-white text-[11px] tracking-[0.85px] leading-[19px]">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat.</p>
+            <div class="py-[30px] px-2.5 lg:px-0 box-border bg-[#171819]">
+                <div
+                    class="w-full flex flex-col items-center lg:flex-row lg:justify-center lg:max-w-[950px] lg:mx-auto"
+                >
+                    <h1
+                        class="lg:w-[216px] text-white font-sans text-[22px] tracking-[0.85px] font-bold font-['Open_Sans'] pb-5 lg:pb-0 lg:mr-[70px]"
+                    >
+                        Newsletter Signup
+                    </h1>
+                    <form
+                        method="get"
+                        class="flex justify-center w-full lg:w-auto lg:justify-start"
+                    >
+                        <input
+                            type="email"
+                            name="eMail"
+                            placeholder="test@youremail.com"
+                            required
+                            class="w-[250px] py-2 pl-4 font-sans font-['Open_Sans'] font-normal font-sm text-[#48555B]"
+                        />
+                        <button
+                            type="submit"
+                            class="bg-[#00A4E5] text-white font-sans text-3 tracking-[0.5px] font-bold font-['Open_Sans'] px-3 active:bg-[#038CC2] active:text-[#DDDDDD]"
+                        >
+                            SIGNUP
+                        </button>
+                    </form>
+                </div>
             </div>
-          </div>
-          <div class="w-full md:w-[262px] mt-10 lg:mt-0 mb-10 lg:mb-0">
-            <p class="font-sans font-normal font-['Open_Sans'] text-white text-[11px] tracking-[0.85px] mb-[10px]">LINKS</p>
-            <div class="flex flex-wrap justify-between">
-              <div class="flex flex-col items-start">
-                <a href="#main" class="font-sans font-semibold font-['Open_Sans'] text-white text-[11px] tracking-[0.85px] leading-[25px]">HOME</a>
-                <a href="#about" class="font-sans font-semibold font-['Open_Sans'] text-white text-[11px] tracking-[0.85px] leading-[25px]">ABOUT</a>
-                <a href="#services" class="font-sans font-semibold font-['Open_Sans'] text-white text-[11px] tracking-[0.85px] leading-[25px]">SERVICES</a>
-                <a href="#work" class="font-sans font-semibold font-['Open_Sans'] text-white text-[11px] tracking-[0.85px] leading-[25px]">PROJECTS</a>
-                <a href="#contact" class="font-sans font-semibold font-['Open_Sans'] text-white text-[11px] tracking-[0.85px] leading-[25px]">CONTACT US</a>
-              </div>
-              <div class="flex flex-col items-start">
-                <a href="#" class="font-sans font-semibold font-['Open_Sans'] text-white text-[11px] tracking-[0.85px] leading-[25px]">FAQ</a>
-                <a href="#" class="font-sans font-semibold font-['Open_Sans'] text-white text-[11px] tracking-[0.85px] leading-[25px]">TERMS</a>
-                <a href="#" class="font-sans font-semibold font-['Open_Sans'] text-white text-[11px] tracking-[0.85px] leading-[25px]">CAREER</a>
-              </div>
-              <div class="flex flex-col items-start">
-                <a href="#" class="font-sans font-semibold font-['Open_Sans'] text-white text-[11px] tracking-[0.85px] leading-[25px]">BLOG</a>
-                <a href="#" class="font-sans font-semibold font-['Open_Sans'] text-white text-[11px] tracking-[0.85px] leading-[25px]">PARTNERS</a>
-                <a href="#" class="font-sans font-semibold font-['Open_Sans'] text-white text-[11px] tracking-[0.85px] leading-[25px]">NEWS</a>
-              </div>
+        </main>
+        <footer>
+            <div
+                class="px-2.5 lg:px-0 box-border bg-[#141A20] pt-[42px] pb-[50px]"
+            >
+                <div
+                    class="flex flex-col md:flex-row md:flex-wrap items-center lg:items-start md:justify-between lg:max-w-[950px] lg:mx-auto"
+                >
+                    <div class="md:w-[250px]">
+                        <div class="lg:max-w-[950px] lg:mx-auto">
+                            <p
+                                class="font-sans font-normal font-['Open_Sans'] text-white text-[11px] tracking-[0.85px]"
+                            >
+                                COMPANY
+                            </p>
+                            <img
+                                src="./assets/img/company-logo-white.svg"
+                                alt=""
+                                class="w-[101px] pt-[18px] pb-4"
+                            />
+                            <p
+                                class="font-sans font-normal font-['Open_Sans'] text-white text-[11px] tracking-[0.85px] leading-[19px]"
+                            >
+                                Lorem ipsum dolor sit amet, consectetuer
+                                adipiscing elit, sed diam nonummy nibh euismod
+                                tincidunt ut laoreet dolore magna aliquam erat.
+                            </p>
+                        </div>
+                    </div>
+                    <div
+                        class="w-full md:w-[262px] mt-10 lg:mt-0 mb-10 lg:mb-0"
+                    >
+                        <p
+                            class="font-sans font-normal font-['Open_Sans'] text-white text-[11px] tracking-[0.85px] mb-[10px]"
+                        >
+                            LINKS
+                        </p>
+                        <div class="flex flex-wrap justify-between">
+                            <div class="flex flex-col items-start">
+                                <a
+                                    href="#main"
+                                    class="font-sans font-semibold font-['Open_Sans'] text-white text-[11px] tracking-[0.85px] leading-[25px]"
+                                    >HOME</a
+                                >
+                                <a
+                                    href="#about"
+                                    class="font-sans font-semibold font-['Open_Sans'] text-white text-[11px] tracking-[0.85px] leading-[25px]"
+                                    >ABOUT</a
+                                >
+                                <a
+                                    href="#services"
+                                    class="font-sans font-semibold font-['Open_Sans'] text-white text-[11px] tracking-[0.85px] leading-[25px]"
+                                    >SERVICES</a
+                                >
+                                <a
+                                    href="#work"
+                                    class="font-sans font-semibold font-['Open_Sans'] text-white text-[11px] tracking-[0.85px] leading-[25px]"
+                                    >PROJECTS</a
+                                >
+                                <a
+                                    href="#contact"
+                                    class="font-sans font-semibold font-['Open_Sans'] text-white text-[11px] tracking-[0.85px] leading-[25px]"
+                                    >CONTACT US</a
+                                >
+                            </div>
+                            <div class="flex flex-col items-start">
+                                <a
+                                    href="#"
+                                    class="font-sans font-semibold font-['Open_Sans'] text-white text-[11px] tracking-[0.85px] leading-[25px]"
+                                    >FAQ</a
+                                >
+                                <a
+                                    href="#"
+                                    class="font-sans font-semibold font-['Open_Sans'] text-white text-[11px] tracking-[0.85px] leading-[25px]"
+                                    >TERMS</a
+                                >
+                                <a
+                                    href="#"
+                                    class="font-sans font-semibold font-['Open_Sans'] text-white text-[11px] tracking-[0.85px] leading-[25px]"
+                                    >CAREER</a
+                                >
+                            </div>
+                            <div class="flex flex-col items-start">
+                                <a
+                                    href="#"
+                                    class="font-sans font-semibold font-['Open_Sans'] text-white text-[11px] tracking-[0.85px] leading-[25px]"
+                                    >BLOG</a
+                                >
+                                <a
+                                    href="#"
+                                    class="font-sans font-semibold font-['Open_Sans'] text-white text-[11px] tracking-[0.85px] leading-[25px]"
+                                    >PARTNERS</a
+                                >
+                                <a
+                                    href="#"
+                                    class="font-sans font-semibold font-['Open_Sans'] text-white text-[11px] tracking-[0.85px] leading-[25px]"
+                                    >NEWS</a
+                                >
+                            </div>
+                        </div>
+                    </div>
+                    <div class="w-full md:w-[141px] mb-10 lg:mb-0" id="contact">
+                        <p
+                            class="font-sans font-normal font-['Open_Sans'] text-white text-[11px] tracking-[0.85px] mb-4"
+                        >
+                            CONTACT US
+                        </p>
+                        <p
+                            class="font-sans font-normal font-['Open_Sans'] text-white text-[11px] tracking-[0.85px]"
+                        >
+                            213 Baker Street 7000 KNW, Kountry Name
+                        </p>
+                        <p
+                            class="font-sans font-normal font-['Open_Sans'] text-white text-[11px] tracking-[0.85px] my-2"
+                        >
+                            +23 994 233 4022
+                        </p>
+                        <p
+                            class="font-sans font-normal font-['Open_Sans'] text-white text-[11px] tracking-[0.85px]"
+                        >
+                            info@konstruct.com
+                        </p>
+                    </div>
+                    <div
+                        class="flex md:flex-col lg:flex-row md:items-center md:gap-6 lg:mt-[30px]"
+                    >
+                        <a href="#"
+                            ><img
+                                src="./assets/img/facebook_logo.svg"
+                                alt="facebook"
+                                class="w-7 lg:w-auto"
+                        /></a>
+                        <a href="#"
+                            ><img
+                                src="./assets/img/twitter_logo.svg"
+                                alt="twitter"
+                                class="mx-[25px] md:mx-0 w-7 lg:w-auto"
+                        /></a>
+                        <a href="#"
+                            ><img
+                                src="./assets/img/google_logo.svg"
+                                alt="google"
+                                class="w-7 lg:w-auto"
+                        /></a>
+                    </div>
+                </div>
             </div>
-          </div>
-          <div class="w-full md:w-[141px] mb-10 lg:mb-0" id="contact">
-            <p class="font-sans font-normal font-['Open_Sans'] text-white text-[11px] tracking-[0.85px] mb-4">CONTACT US</p>
-            <p class="font-sans font-normal font-['Open_Sans'] text-white text-[11px] tracking-[0.85px]">213 Baker Street 7000 KNW, Kountry Name</p>
-            <p class="font-sans font-normal font-['Open_Sans'] text-white text-[11px] tracking-[0.85px] my-2">+23 994 233 4022</p>
-            <p class="font-sans font-normal font-['Open_Sans'] text-white text-[11px] tracking-[0.85px]">info@konstruct.com</p>
-          </div>
-          <div class="flex md:flex-col lg:flex-row md:items-center md:gap-6 lg:mt-[30px]">
-            <a href="#"><img src="./img/facebook_logo.svg" alt="facebook" class="w-7 lg:w-auto"></a>
-            <a href="#"><img src="./img/twitter_logo.svg" alt="twitter" class="mx-[25px] md:mx-0 w-7 lg:w-auto"></a>
-            <a href="#"><img src="./img/google_logo.svg" alt="google" class="w-7 lg:w-auto"></a>
-          </div>
-        </div>
-      </div>
-      <div class="px-2.5 lg:px-0 lg:mx-auto py-[22px] box-border flex flex-col items-center bg-[#171819]">
-        <p class="font-sans font-normal font-['Open_Sans'] text-white text-[11px] tracking-[0.85px]">© 2017 Konstruct Inc. Designed by Jane Kathryn Teo</p>
-      </div>
-    </footer>
-  </body>
-  <script src="./script/hamburger.js"></script>
+            <div
+                class="px-2.5 lg:px-0 lg:mx-auto py-[22px] box-border flex flex-col items-center bg-[#171819]"
+            >
+                <p
+                    class="font-sans font-normal font-['Open_Sans'] text-white text-[11px] tracking-[0.85px]"
+                >
+                    © 2017 Konstruct Inc. Designed by Jane Kathryn Teo
+                </p>
+            </div>
+        </footer>
+    </body>
+    <script src="./assets/script/hamburger.js"></script>
 </html>
